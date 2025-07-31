@@ -20,10 +20,10 @@ dalam aplikasi web atau mobile yang berbasis HTTP request.
 client side.Sedangkan client side ialah tempat user agar bisa melakukan request yang diinginkan
 ke server yang dimiliki sebuah aplikasi,contoh list product yang ingin dilihat oleh client.
 
-3. Monolith -> merupakan sebuah metode untuk merancang sebuah layanan aplikasi dalam 1 aplikasi saja,
+3. Monolith -> merupakan sebuah arsitektur untuk merancang sebuah layanan aplikasi dalam 1 aplikasi saja,
 contoh: misal seperti project aplikasi ecommerse ber skala kecil.
     
-    Microservice -> merupakan sebuah metode untuk merancang aplikasi dengan cara memisahkan layanan
+    Microservice -> merupakan sebuah arsitektur untuk merancang aplikasi dengan cara memisahkan layanan
 layanan yang dimiliki menjadi beberapa bagian,jadi dari sebuah bentuk aplikasi besar,layanan yang ada 
 didalam nya dipecah menjadi bagian-bagian yang terpisah dan independen,dan berkomunikasi via REST API
 contoh: seperti aplikasi eccommerse yang sudah berskala besar,dan punya banyak layanan didalam nya,oleh
@@ -41,7 +41,13 @@ aplikasi web dan enterprise.
 
 ## Design Database
 
-![ecommers_design_database](imgs/ecommers.jpg)
+![ecommers_design_database](imgs/ecommers.png)
+
+Berdasarkan gambar diatas saya menggunakan design model database relasional yang seperti ini dikarenakan pendekatan
+ini mengikuti prinsip normalisasi ERD.Tujuan nya agar data tetap konsisten dan tidak terjadi duplikasi dan memastikan 
+integritas data tetap terjaga.Selain itu juga design
+seperti ini lebih sederhana dan cocok juga untuk aplikasi dengan arsitektur monolith,yang mana project nya berskala kecil
+dan lebih mementingkan efficiency,dan juga nanti nya mudah untuk dikelola.
 
 ## Design modules
 
