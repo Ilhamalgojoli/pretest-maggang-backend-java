@@ -17,7 +17,6 @@ public class TransactionController {
         try {
             return ResponseEntity.ok(transactionService.checkout(userId));
         } catch (RuntimeException e) {
-            // Sebaiknya gunakan @ControllerAdvice untuk error handling yang lebih baik
             return ResponseEntity.badRequest().build();
         }
     }
