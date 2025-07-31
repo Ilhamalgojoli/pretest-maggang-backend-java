@@ -39,6 +39,10 @@ dari perusahaan oracle.Program java dikompilasi menggunakan sebuah mesin virtual
     Springboot -> Framework java yang membantu developer untuk mengembangkan suatu aplikasi berbasis java,terutama
 aplikasi web dan enterprise.
 
+## Design Database
+
+![ecommers_design_database](imgs/ecommers.jpg)
+
 ## Design modules
 
 Dalam suatu schenario ada requirement membuat aplikasi e-commerse seperti Tokopedia seperti berikut:
