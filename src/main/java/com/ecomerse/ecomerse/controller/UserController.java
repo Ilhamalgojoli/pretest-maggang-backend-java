@@ -1,10 +1,13 @@
 package com.ecomerse.ecomerse.controller;
 
+import com.ecomerse.ecomerse.model.Product;
 import com.ecomerse.ecomerse.model.User;
 import com.ecomerse.ecomerse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
@@ -16,6 +19,9 @@ public class UserController {
 
     @PostMapping
     public User createUser(@RequestBody User user) { return userService.createUser(user); }
+
+    @GetMapping
+    public List<User> getAllUsers() { return userService.getAllUsers(); }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {

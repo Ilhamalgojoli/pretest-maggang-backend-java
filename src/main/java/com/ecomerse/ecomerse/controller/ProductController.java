@@ -13,10 +13,14 @@ public class ProductController {
     private final ProductService productService;
 
     @Autowired
-    public ProductController(ProductService productService) { this.productService = productService; }
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping
-    public List<Product> getAllProducts() { return productService.getAllProducts(); }
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
@@ -24,7 +28,9 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product createProduct(@RequestBody Product product) { return productService.createProduct(product); }
+    public Product createProduct(@RequestBody Product product) {
+        return productService.createProduct(product);
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {

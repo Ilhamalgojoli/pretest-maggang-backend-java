@@ -1,8 +1,7 @@
 package com.ecomerse.ecomerse.controller;
 
-import com.ecomerse.ecomerse.model.Transaction;
+import com.ecomerse.ecomerse.dto.TransactionRes;
 import com.ecomerse.ecomerse.service.TransactionService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -10,19 +9,19 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/transactions")
 public class TransactionController {
-    @Autowired private TransactionService transactionService;
+    private final TransactionService transactionService;
+
+    public TransactionController(TransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
 
     @PostMapping("/checkout/{userId}")
-    public ResponseEntity<Transaction> checkout(@PathVariable Long userId) {
-        try {
-            return ResponseEntity.ok(transactionService.checkout(userId));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().build();
-        }
+    public ResponseEntity<TransactionRes> checkout(@PathVariable Long userId) {
+        return ResponseEntity.ok(transactionService.checkout(userId));
     }
 
     @GetMapping("/history/{userId}")
-    public ResponseEntity<List<Transaction>> getHistory(@PathVariable Long userId) {
+    public ResponseEntity<List<TransactionRes>> getHistory(@PathVariable Long userId) {
         return ResponseEntity.ok(transactionService.getTransactionHistory(userId));
     }
 }
